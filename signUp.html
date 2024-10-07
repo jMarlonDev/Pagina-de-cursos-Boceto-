@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="./src/styles/output.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Creación de cuenta</title>
+</head>
+
+<body class="font-jetbrains font-bold">
+    <nav id="navSignUp" class="">
+        <div id="containerElementSignUp">
+            <div id="navElements">
+                <img src="./assets/notebook.png" alt="logo book" class="max-w-14 animate__animated animate__bounce">
+                <a href="#" class="animate__animated animate__bounce" id="categories">Categories</a>
+                <a href="#" class="animate__animated animate__bounce" id="teachers">Teachers</a>
+                <a href="#" class="animate__animated animate__bounce" id="support">Support</a>
+                <img src="./assets/orange.png" alt="hoja naranja" class="max-w-14 animate__animated animate__bounce">
+            </div>
+        </div>
+    </nav>
+
+    <h4 id="titleAccount"><i class="bi bi-person-fill-add animate__animated animate__fadeInUp animate__delay-1s">Create
+            Account</i>
+    </h4>
+
+    <!--Sistema de notificaciones-->
+    <div id="notificationsContainer" class=""></div>
+
+    <div id="containerForm">
+
+        <form action="" novalidate id="form" class="w-2/4 mr-20">
+            <fieldset id="containerName">
+                <legend id="legendPersonalData">Personal data</legend>
+                <div id="personalData">
+                    <!--campo para el nombre del usuario-->
+                    <div id="personalDataName">
+                        <label for="name" id="name">Name</label>
+                        <input type="text" id="nameInput" placeholder="Ej: Marlon" autocomplete="off">
+                    </div>
+
+                    <!--campo  para el apellido del usuario-->
+                    <div id="personaLastName">
+                        <label for="lastName">Lastname</label>
+                        <input type="text" id="lastNameInput" placeholder="Ej: Bonaparte" autocomplete="off">
+                    </div>
+                </div>
+
+                <!--campo para la fecha de nacimiento del usuario-->
+                <div id="birthday">
+                    <label for="dateOfBirth">Date of birth</label>
+                    <input type="date" id="dateOfBirth" class="w-60 p-2">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend id="legendAuthentication">Authentication</legend>
+                <!--campo del email para el usuario-->
+                <div id="divEmail">
+                    <label for="emailInput">Email adress</label>
+                    <input type="email" name="email" id="emailInput" placeholder="tucorreo@gmail.com" class="w-3/4">
+                </div>
+
+                <!--campo para la contraseña del usuario-->
+                <div id="divPasswords">
+                    <div>
+                        <label for="passwordInput">Password</label>
+                        <input type="password" name="password" id="passwordInput" placeholder="password"
+                            autocomplete="off">
+                    </div>
+                    <div>
+                        <label for="confirmPassword">Confirm password</label>
+                        <input type="password" name="confirmPassword" id="confirmPassword"
+                            placeholder="Confirm Password" autocomplete="off">
+                    </div>
+                </div>
+            </fieldset>
+
+            <button id="btnSignUp">Sign Up</button>
+        </form>
+    </div>
+
+
+    <script src=" ./src/js/signUp.js"></script>
+</body>
+
+</html>

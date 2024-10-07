@@ -1,0 +1,52 @@
+{
+    "arrayCourses": [
+        {
+            "title": "Curso del manejo del manejo de la api del DOM desde cero",
+            "img": "../assets/webp/DOM.webp"
+        },
+        {
+            "title": "Curso de JS desde los fundamentos hasta ser un experto",
+            "img": "../assets/webp/js.webp"
+        },
+        {
+            "title": "Curso de Typescript desde cero hasta avanzado",
+            "img": "../assets/webp/typeScript.webp"
+        },
+        {
+            "title": "Curso de C# Avanzado usando conceptos de POO",
+            "img": "../assets/webp/csharp.webp"
+        },
+        {
+            "title": "Curso de Node JS desde cero para principiantes",
+            "img": "../assets/webp/node.webp"
+        },
+        {
+            "title": "Curso de Sprin Boot con JAVA de cero a avanzado",
+            "img": "../assets/webp/springBoot.webp"
+        },
+        {
+            "title": "Curso de sql desde cero",
+            "img": "../assets/webp/sql.webp"
+        },
+        {
+            "title": "Curso de Nosql (bases de datos no relaciones desde cero)",
+            "img": "../assets/webp/Nosql.webp"
+        },
+        {
+            "title": "Curso de C, desde cero hasta avanzado",
+            "img": "../assets/webp/C.webp"
+        },
+        {
+            "title": "Curse de los fundamentos basicos de C++",
+            "img": "../assets/webp/cpp1.webp"
+        },
+        {
+            "title": "Curse de React desde cero ( aprende el desarrollo web moderno",
+            "img": "../assets/webp/react.webp"
+        },
+        {
+            "title": "Curso de Angular desde cero a experto",
+            "img": "../assets/webp/angular.webp"
+        }
+    ]
+}

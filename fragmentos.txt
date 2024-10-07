@@ -1,0 +1,587 @@
+    <div class="fixed  translate-x-full left-36 top-1/2 transform -translate-y-1/2 space-y-12">
+        <div class="w-2/5">
+            <div class="flex items-center justify-between p-2 bg-red-700 rounded-t-xl">
+                <i class="bi bi-emoji-frown-fill text-2xl text-white"></i>
+                <p class="text-xl text-white">Nombre</p>
+                <i class="bi bi-x-circle-fill text-2xl text-white"></i>
+            </div>
+            <div class="bg-red-100 rounded-b-xl p-2">
+                <p class="text-center">
+                    el nombre está incorrecto: no puede contener números, ni signos, solo se permite un alcance de 40
+                    caracteres.
+                </p>
+            </div>
+        </div>
+
+        <div class="w-2/5">
+            <div class="flex items-center justify-between p-2 bg-red-700 rounded-t-xl">
+                <i class="bi bi-emoji-frown-fill text-2xl text-white"></i>
+                <p class="text-xl text-white">Apellido</p>
+                <i class="bi bi-x-circle-fill text-2xl text-white"></i>
+            </div>
+            <div class="bg-red-100 rounded-b-xl p-2">
+                <p class="text-center">
+                    el apellido está incorrecto: no puede contener números, ni signos, solo se permite un alcance de 40
+                    caracteres.
+                </p>
+            </div>
+        </div>
+
+        <div class="w-2/5">
+            <div class="flex items-center justify-between p-2 bg-red-700 rounded-t-xl">
+                <i class="bi bi-emoji-frown-fill text-2xl text-white"></i>
+                <p class="text-xl text-white">Correo Electrónico</p>
+                <i class="bi bi-x-circle-fill text-2xl text-white"></i>
+            </div>
+            <div class="bg-red-100 rounded-b-xl p-2">
+                <p class="text-center">
+                    el correo electrónico está incorrecto: no puede contener números, ni signos, solo se permite un
+                    alcance de 40 caracteres.
+                </p>
+            </div>
+        </div>
+
+        <div class="w-2/5">
+            <div class="flex items-center justify-between p-2 bg-red-700 rounded-t-xl">
+                <i class="bi bi-emoji-frown-fill text-2xl text-white"></i>
+                <p class="text-xl text-white">Contraseña</p>
+                <i class="bi bi-x-circle-fill text-2xl text-white"></i>
+            </div>
+            <div class="bg-red-100 rounded-b-xl p-2">
+                <p class="text-center">
+                    el correo electrónico está incorrecto: no puede contener números, ni signos, solo se permite un
+                    alcance de 40 caracteres.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+        //validacion y estilo para el input de nombre
+    notificationName(namePattern.test(nameValue), nameInput, nameNotificationContainer);
+
+    //validacion y estilo para el input de apellido
+
+    //validacion y estilo para el campo de email
+    if (emailPattern.test(emailValue)) {
+        alert("el email esta correcto");
+        emailInput.classList.remove("border-red-500");
+        emailInput.classList.add("border-purple-900");
+    } else {
+        alert("el email no esta correcto");
+        emailInput.classList.remove("border-purple-900");
+        emailInput.classList.add("border-red-500");
+    }
+
+    //validacion y estilo para el campo de contraseña
+    if (passwordValue === "" || confirmPasswordValue === "") {
+        passwordInput.classList.remove("border-purple-900");
+        confirmPassword.classList.remove("border-purple-900");
+        passwordInput.classList.add("border-red-500");
+        confirmPassword.classList.add("border-red-500");
+    }
+    else if (passwordValue !== confirmPasswordValue) {
+        alert("las dos contraseñas no coinciden");
+        passwordInput.classList.remove("border-purple-900");
+        confirmPassword.classList.remove("border-purple-900");
+        passwordInput.classList.add("border-red-500");
+        confirmPassword.classList.add("border-red-500");
+    } else {
+        alert("las dos contraseñas son iguales");
+        passwordInput.classList.remove("border-red-500");
+        confirmPassword.classList.remove("border-red-500");
+        passwordInput.classList.add("border-purple-900");
+        confirmPassword.classList.add("border-purple-900");
+
+    }
+
+
+
+    const notificationContainer = document.createElement("div");
+//notificacion de nombre
+const nameNotificationContainer = document.createElement("div");
+
+const titleName = document.createElement("div");
+const iconSadFace = document.createElement("i");
+iconSadFace.classList.add("bi", "bi-emoji-frown-fill", "text-2xl", "text-white");
+//parrafo del nombre
+const paragraphName = document.createElement("p");
+paragraphName.classList.add("text-xl", "text-white");
+paragraphName.textContent = "Nombre";
+//icono de cerrar
+const iconClose = document.createElement("i");
+iconClose.classList.add("bi", "bi-x-circle-fill", "text-2xl", "text-white");
+nameNotificationContainer.classList.add("w-1/2", "ml-36");
+const nameDescription = document.createElement("div");
+const paragraphDescription = document.createElement("p");
+paragraphDescription.textContent = "El nombre está incorrecto: no puede contener números, ni signos, solo se permite un alcance de 40 caracteres.";
+
+//agregando al contenerdor
+titleName.appendChild(iconSadFace);
+titleName.appendChild(paragraphName);
+titleName.appendChild(iconClose);
+
+nameNotificationContainer.appendChild(titleName);
+notificationContainer.appendChild(nameNotificationContainer);
+
+nameDescription.appendChild(paragraphDescription);
+nameNotificationContainer.appendChild(nameDescription);
+notificationContainer.appendChild(nameNotificationContainer);
+
+//agregando los estilos al sistema de notificacion
+// primera notificacion de nombre
+notificationContainer.classList.add("fixed", "translate-x-72", "top-[310px]", "transform", "left-1/2", "-translate-y-1/2", "space-y-12");
+
+titleName.classList.add("flex", "items-center", "justify-between", "p-2", "bg-red-700", "rounded-t-xl");
+
+nameDescription.classList.add("bg-red-100", "rounded-b-xl", "p-2");
+
+//creando el div de la notificacion de apellido
+const lastNameContainer = document.createElement("div");
+const titleLastname = document.createElement("div");
+const lastNameDescription = document.createElement("div");
+const lastName = document.createElement("p");
+const paragraphDescriptionLastName = document.createElement("p");
+const iconSadFace02 = document.createElement("i");
+const iconClose02 = document.createElement("i");
+lastName.textContent = "Apellido";
+iconSadFace02.classList.add("bi", "bi-emoji-frown-fill", "text-2xl", "text-white");
+iconClose02.classList.add("bi", "bi-x-circle-fill", "text-2xl", "text-white");
+paragraphDescriptionLastName.textContent = "El apellido está incorrecto: no puede contener números, ni signos, solo se permite un alcance de 40 caracteres.";
+
+
+lastNameContainer.appendChild(titleLastname);
+lastNameContainer.appendChild(lastNameDescription);
+titleLastname.appendChild(iconSadFace02);
+titleLastname.appendChild(lastName);
+titleLastname.appendChild(iconClose02);
+lastNameDescription.appendChild(paragraphDescriptionLastName);
+notificationContainer.appendChild(lastNameContainer);
+
+lastNameContainer.classList.add("w-1/2", "ml-36");
+titleLastname.classList.add("flex", "items-center", "justify-between", "p-2", "bg-red-700", "rounded-t-xl");
+lastName.classList.add("text-xl", "text-white");
+lastNameDescription.classList.add("bg-red-100", "rounded-b-xl", "p-2");
+
+//creando el contenedor de la notificacion de el Email
+const emailContainer = document.createElement("div");
+emailContainer.classList.add("w-1/4");
+const titleEmail = document.createElement("div");
+const divDescriptionEmail = document.createElement("div");
+
+//elementos de la notificacion de email
+const iconSadFace03 = document.createElement("i");
+const iconClose03 = document.createElement("i");
+const email = document.createElement("p");
+email.textContent = "Correo electronico"
+const descriptionEmail = document.createElement("p");
+descriptionEmail.textContent = "El correo electrónico está incorrecto: Debe terminar en el dominio (.com ó .co ), debe incluir al menos un ( @ ) y no puede estar vació antes del @.";
+
+//agregando los estilos para los elementos
+iconSadFace03.classList.add("bi", "bi-emoji-frown-fill", "text-2xl", "text-white");
+iconClose03.classList.add("bi", "bi-x-circle-fill", "text-2xl", "text-white");
+email.classList.add("text-xl", "text-white");
+
+// agregando estilo al title email
+titleEmail.classList.add("flex", "items-center", "justify-between", "p-2", "bg-red-700", "rounded-t-xl");
+titleEmail.appendChild(iconSadFace03);
+titleEmail.appendChild(email);
+titleEmail.appendChild(iconClose03);
+
+//agregando estilo a la descricion del email
+divDescriptionEmail.classList.add("bg-red-100", "rounded-b-xl", "p-2");
+
+//agregando los divs al contenedor de email
+divDescriptionEmail.appendChild(descriptionEmail);
+emailContainer.appendChild(titleEmail);
+emailContainer.appendChild(divDescriptionEmail);
+
+notificationContainer.appendChild(emailContainer);
+
+//creando el contenedor de la notificacion de la contraseña
+const passwordContainer = document.createElement("div");
+passwordContainer.classList.add("w-1/4");
+const titlePassword = document.createElement("div");
+const divDescriptionPassword = document.createElement("div");
+
+//creando los elementos de la notificaciónd de la contraseña
+const iconSadFace04 = document.createElement("i");
+const iconClose04 = document.createElement("i");
+const password = document.createElement("p");
+password.textContent = "Contraseña";
+const descriptionPassword = document.createElement("p");
+descriptionPassword.textContent = "Contraseña incorrecta: Primero los campos de la contraseña no pueden estar vacíos, las contraseñas deben ser iguales, y pueden contener letras y numeros ( en mayúsculas o minúsculas ) pero no se signos."
+
+//agregando los estilos para los elementos de la notificacion de contrasña
+iconSadFace04.classList.add("bi", "bi-emoji-frown-fill", "text-2xl", "text-white");
+iconClose04.classList.add("bi", "bi-x-circle-fill", "text-2xl", "text-white");
+password.classList.add("text-xl", "text-white");
+
+//agregando los estilos para el div titlePassword
+titlePassword.classList.add("flex", "items-center", "justify-between", "p-2", "bg-red-700", "rounded-t-xl");
+titlePassword.appendChild(iconSadFace04);
+titlePassword.appendChild(password);
+titlePassword.appendChild(iconClose04);
+
+//agregando los estilos a la descripción de la contraseña
+divDescriptionPassword.classList.add("bg-red-100", "rounded-b-xl", "p-2");
+divDescriptionPassword.appendChild(descriptionPassword);
+passwordContainer.appendChild(titlePassword);
+passwordContainer.appendChild(divDescriptionPassword);
+
+notificationContainer.appendChild(passwordContainer);
+
+nameNotificationContainer.classList.add("hidden");
+lastNameContainer.classList.add("hidden");
+emailContainer.classList.add("hidden");
+passwordContainer.classList.add("hidden");
+//agregando el sistema de notificaciones al body
+const body = document.body;
+body.appendChild(notificationContainer);
+
+
+
+                src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=00DF29&center=true&random=false&width=435&lines=Because; +I'm+fascinated+with+programming">
+
+
+                            <i class="bi bi-three-dots-vertical"></i>
+            <img src="./assets/brainstorming.png" alt="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa corporis distinctio molestias dolorem
+                commodi vitae? Rerum aliquid illum explicabo, doloribus ullam beatae excepturi maiores, ratione totam
+                fugit officia, provident molestias?</p>
+
+
+containerTitle.classList.add("flex", "justify-center", "pt-14");
+title.classList.add("text-2xl", "text-gray-800", "uppercase");
+courseImage.classList.add("max-w-96");
+
+
+imageCourse.classList.add("max-w-80", "rounded-sm", "block");
+otherOptions.classList.add("absolute", "top-3", "right-2", "text-2xl", "text-black", "bg-white", "p-1");
+
+
+
+
+
+Poner en el courseHandler
+
+courses.forEach((course) => {
+    course.classList.add("p-14");
+
+});
+
+containerImage.forEach((imageContainer) => {
+    imageContainer.classList.add("relative", "inline-block");
+});
+
+
+images.forEach((img) => {
+    img.classList.add("max-w-72", "block");
+});
+
+icons.forEach((icon) => {
+    icon.classList.add("absolute", "top-3", "right-2", "text-2xl", "text-black", "bg-white", "p-1");
+    icon.addEventListener("click", () => {
+
+    })
+});
+
+
+// agregando los estilos para el menu y presentacion de los cursos
+containerCourses.classList.add("grid", "grid-cols-4", "gap-8");
+containerTitle.classList.add("flex", "justify-center", "pt-8");
+title.classList.add("text-2xl", "text-gray-600", "uppercase");
+
+subtitleCourse.forEach((subtitle) => {
+    subtitle.classList.add("text-xl", "text-gray-800", "mt-6");
+});
+
+
+
+
+
+export const CourseCardHandler = {
+    create: (title, img) => {
+        //creando los elementos la card del curso y dandole estilo
+        const containerTitle = document.createElement("div");
+        const mainTitle = document.createElement("h1");
+
+        //creando el contenedor que va a mostrar la imagen y el contenido del curso
+        const courses = document.createElement("div");
+        courses.id = "courses";
+        const allCourses = document.querySelectorAll("#courses");
+        const imageContainer = document.createElement("div");
+        const iconCourse = document.createElement("i");
+        const imgCourse = document.createElement("img");
+
+        const subtitleCourse = document.createElement("div");
+        const courseParagraph = document.createElement("p");
+        const buttonCourse = document.createElement("button");
+
+        courses.forEach(course => {
+            course.classList.add("p-14", "bg-orange-700");
+        });
+
+        //agregando los elementos a los contenedores correspondientes
+        containerTitle.appendChild(mainTitle);
+        imageContainer.appendChild(iconCourse);
+        imageContainer.appendChild(imgCourse);
+
+        subtitleCourse.appendChild(courseParagraph);
+        subtitleCourse.appendChild(buttonCourse);
+
+        courses.appendChild(imageContainer);
+        courses.appendChild(subtitleCourse);
+    }
+}
+
+
+
+
+
+    <div id="containerTitle" class="mb-10">
+        <h1 id="title">take advantage of all the courses we have for you...</h1>
+    </div>
+
+    <div id="containerCourses">
+        <div id="courses">
+            <div id="imageContainer">
+                <i class="bi bi-three-dots-vertical" id="otherOptions"></i>
+                <img src="./assets/dom.jpg" alt="imagen de fondo del curso" id="imageCourse">
+            </div>
+
+            <div>
+                <p id="subtitleCourse">Curso del manejo de la api<br>del DOM desde cero</p>
+                <button class="py-3 w-64 bg-orange-600 text-white rounded-xl text-center ml-7 mt-8">Ir al
+                    curso</button>
+            </div>
+        </div>
+
+        <div id="courses">
+            <div id="imageContainer">
+                <i class="bi bi-three-dots-vertical " id="otherOptions"></i>
+                <img src="./assets/dom.jpg" alt="imagen de fondo del curso" id="imageCourse">
+            </div>
+
+            <div>
+                <p id="subtitleCourse">Curso del manejo de la api<br>del DOM desde cero</p>
+                <button class="py-3 w-64 bg-orange-600 text-white rounded-xl text-center ml-7 mt-8">Ir al
+                    curso</button>
+            </div>
+        </div>
+
+        <div id="courses">
+            <div id="imageContainer">
+                <i class="bi bi-three-dots-vertical " id="otherOptions"></i>
+                <img src="./assets/dom.jpg" alt="imagen de fondo del curso" id="imageCourse">
+            </div>
+
+            <div>
+                <p id="subtitleCourse">Curso del manejo de la api<br>del DOM desde cero</p>
+                <button class="py-3 w-64 bg-orange-600 text-white rounded-xl text-center ml-7 mt-8">Ir al
+                    curso</button>
+            </div>
+        </div>
+        <div id="courses">
+            <div id="imageContainer">
+                <i class="bi bi-three-dots-vertical " id="otherOptions"></i>
+                <img src="./assets/dom.jpg" alt="imagen de fondo del curso" id="imageCourse">
+            </div>
+
+            <div>
+                <p id="subtitleCourse">Curso del manejo de la api<br>del DOM desde cero</p>
+                <button class="py-3 w-64 bg-orange-600 text-white rounded-xl text-center ml-7 mt-8">Ir al
+                    curso</button>
+            </div>
+        </div>
+
+    </div>
+
+
+
+            //creando el contenedor del titulo 
+        const containerTitle = document.createElement("div");
+        const mainTitle = document.createElement("h1");
+        //creando el contenedor para almacenar cada uno de los cursos que se van a mostrar en 
+        // la pagina web
+        const containerCourses = document.createElement("div");
+        containerCourses.id = "containerCourses";
+
+        const courses = document.createElement("div");
+        courses.id = "courses";
+
+        const imageContainer = document.createElement("div");
+        imageContainer.id = "imageContainer";
+
+        //elementos visuales como el titlulo del curso y la imagen de portada 
+        const iconCourse = document.createElement("i");
+        iconCourse.id = "otherOptions";
+        const imgCourse = document.createElement("img");
+        imgCourse.id = "imgCourse";
+
+        const subtitleCourse = document.createElement("div");
+        const paragrahCourse = document.createElement("p");
+        const buttonCourse = document.createElement("button");
+        buttonCourse.id = "buttonCourse";
+        buttonCourse.textContent = "Go Course";
+
+        paragrahCourse.id = "paragraphCourse";
+
+        // aqui se van a selecionar todos los contenedores y los elementos de
+        //de los posibles cursos que se van  a mostrar en la pagina
+
+        const allCourses = document.querySelectorAll("#courses");
+        const allcontainerImages = document.querySelectorAll("#imageContainer");
+        const allImages = document.querySelectorAll("#imgCourse");
+        const allIcons = document.querySelectorAll("#iconCourse");
+        const allButtons = document.querySelectorAll("#buttonCourse");
+
+        containerTitle.classList.add("mt-20");
+        mainTitle.classList.add("text-2xl", "text-center", "text-gray-600");
+        mainTitle.textContent = "Take advantage of all the courses we have for you...";
+
+        allCourses.forEach((course) => {
+            course.classList.add("p-14");
+        });
+
+        allcontainerImages.forEach((containerImage) => {
+            containerImage.classList.add("relative", "inline-block");
+        });
+
+        allImages.forEach((img) => {
+            img.classList.add("max-w-72", "block");
+        });
+
+        allIcons.forEach((icon) => {
+            icon.classList.add("absolute", "top-3", "right-2", "text-2xl", "text-black", "bg-white", "p-1", "bi", "bi-three-dots-vertical");
+        });
+
+        allButtons.forEach((button) => {
+            button.classList.add("py-3", "w-64", "bg-orange-600", "text-white", "rounded-xl", "text-center", "ml-7", "mt-8");
+        })
+
+
+
+        subtitleCourse.appendChild(paragrahCourse);
+        subtitleCourse.appendChild(buttonCourse);
+        imageContainer.appendChild(iconCourse);
+        imageContainer.appendChild(imgCourse);
+        containerTitle.appendChild(mainTitle);
+        containerCourses.appendChild(courses);
+
+        body.appendChild(containerTitle);
+        body.appendChild(containerCourses);
+
+
+
+
+            <div class="containerCourses grid grid-cols-4 gap-8 pt-8 ml-10">
+        <div id="courses" class="max-w-96 bg-red-600 flex flex-col justify-center items-center">
+            <div id="imageContainer" class="relative">
+                <i class="bi bi-three-dots-vertical absolute top-2 right-2 bg-white p-1 text-2xl" id="otherOptions"></i>
+                <img src="./assets/webp/DOM.webp" alt="imagen de fondo del curso" id="imageCourse" class="w-80">
+            </div>
+
+            <div class="mt-3">
+                <p id="subtitleCourse" class="text-center">Curso del manejo de la api<br>del DOM desde cero</p>
+                <button class=" py-3 w-64 bg-orange-600 text-white rounded-xl text-center  mt-7">Ir al
+                    curso</button>
+            </div>
+        </div>
+
+        <div id="courses" class="max-w-96 bg-red-600 flex flex-col justify-center items-center p-4">
+            <div id="imageContainer" class="relative">
+                <i class="bi bi-three-dots-vertical absolute top-2 right-2 bg-white p-1 text-2xl" id="otherOptions"></i>
+                <img src="./assets/webp/tp1.webp" alt="imagen de fondo del curso" id="imageCourse"
+                    class="max-w-80 object-cover">
+            </div>
+
+            <div class="mt-3">
+                <p id="subtitleCourse" class="text-center">Curso del manejo de la api<br>del DOM desde cero</p>
+                <button class=" py-3 w-64 bg-orange-600 text-white rounded-xl text-center  mt-7">Ir al
+                    curso</button>
+            </div>
+        </div>
+
+        <div id="courses" class="max-w-96 bg-red-600 flex flex-col justify-center items-center">
+            <div id="imageContainer" class="relative">
+                <i class="bi bi-three-dots-vertical absolute top-2 right-2 bg-white p-1 text-2xl" id="otherOptions"></i>
+                <img src="./assets/webp/php1.webp" alt="imagen de fondo del curso" id="imageCourse"
+                    class="w-80 object-cover">
+            </div>
+
+            <div class="mt-3">
+                <p id="subtitleCourse" class="text-center">Curso del manejo de la api<br>del DOM desde cero</p>
+                <button class=" py-3 w-64 bg-orange-600 text-white rounded-xl text-center  mt-7">Ir al
+                    curso</button>
+            </div>
+        </div>
+
+        <div id="courses" class="max-w-96 bg-red-600 flex flex-col justify-center items-center">
+            <div id="imageContainer" class="relative">
+                <i class="bi bi-three-dots-vertical absolute top-2 right-2 bg-white p-1 text-2xl" id="otherOptions"></i>
+                <img src="./assets/webp/AnimacionCss02.webp" alt="imagen de fondo del curso" id="imageCourse"
+                    class="max-w-80">
+            </div>
+
+            <div class="mt-3">
+                <p id="subtitleCourse" class="text-center">Curso del manejo de la api<br>del DOM desde cero</p>
+                <button class=" py-3 w-64 bg-orange-600 text-white rounded-xl text-center  mt-7">Ir al
+                    curso</button>
+            </div>
+        </div>
+        <div id="courses" class="max-w-96 bg-red-600 flex flex-col justify-center items-center">
+            <div id="imageContainer" class="relative">
+                <i class="bi bi-three-dots-vertical absolute top-2 right-2" id="otherOptions"></i>
+                <img src="./assets/dom.jpg" alt="imagen de fondo del curso" id="imageCourse" class="w-80">
+            </div>
+
+            <div class="mt-3">
+                <p id="subtitleCourse" class="text-center">Curso del manejo de la api<br>del DOM desde cero</p>
+                <button class=" py-3 w-64 bg-orange-600 text-white rounded-xl text-center  mt-7">Ir al
+                    curso</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+            const courses = document.createElement("div");
+        courses.id = "courses";
+        const imageContainer = document.createElement("div");
+        const subtitleCourse = document.createElement("div");
+        const iconCourse = document.createElement("i");
+        const imgCourse = document.createElement("img");
+        imgCourse.id = "imgCourse";
+        const paragraphCourse = document.createElement("p");
+        const buttonCourse = document.createElement("button");
+
+        let containerCourse = document.querySelector("#containerCourse");
+        if (!containerCourse) {
+            containerCourse = document.createElement("div");
+            containerCourse.id = "containerCourse";
+            containerCourse.classList.add("grid", "grid-cols-4", "gap-8", "pt-8", "ml-10");
+            body.appendChild(containerCourse); // Agregamos el contenedor solo si no existe
+        }
+        // Dandoles estilos a los elementos que van a tener como se van  a mostrar los cursos
+        courses.classList.add("max-w-96", "bg-purple-400", "flex", " flex-col", "justify-center", "items-center");
+        imageContainer.classList.add("relative", "inline-block", "w-full");
+        iconCourse.classList.add("bi", "bi-three-dots-vertical", "absolute", "top-3", "right-2", "text-2xl", "text-black", "bg-white", "p-1");
+        buttonCourse.classList.add("py-3", "w-64", "bg-orange-600", "text-white", "rounded-xl", "text-center", "ml-7", "mt-8");
+        buttonCourse.textContent = "Go To Course";
+
+        paragraphCourse.textContent = title;
+        imgCourse.src = img;
+
+        imgCourse.classList.add("rounded-xl", "w-full");
+        imageContainer.appendChild(iconCourse);
+        imageContainer.appendChild(imgCourse);
+        subtitleCourse.appendChild(paragraphCourse);
+        subtitleCourse.appendChild(buttonCourse);
+
+        courses.appendChild(imageContainer);
+        courses.appendChild(subtitleCourse);
+        containerCourse.appendChild(courses);
